@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-pos-bg: #f8fafc;
+  --color-pos-surface: #ffffff;
+  --color-pos-surface-dark: #1e293b;
+  --color-pos-accent: #3b82f6;
+  --color-pos-accent-dark: #60a5fa;
+  --color-pos-success: #22c55e;
+  --color-pos-warning: #f59e0b;
+  --color-pos-danger: #ef4444;
+}
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  @media print {
+    html, body {
+      width: 80mm;
+      margin: 0;
+      padding: 0;
+    }
+    @page {
+      margin: 0;
+      size: 80mm auto;
+    }
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  .dark .scrollbar-thin {
+    scrollbar-color: #475569 transparent;
+  }
+}
